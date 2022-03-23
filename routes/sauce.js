@@ -16,7 +16,7 @@ router.get('/',auth, sauceCtrl.getAllSauces)
 // Return sauce with given Id
 router.get('/:id',auth, sauceCtrl.getSauce);
 //Define like status
-router.post('/:id/like',auth, sauceCtrl.likeSauce);
+router.post('/:id/like',auth, sauceCtrl.likeDislike);
 
 
 module.exports = router;
