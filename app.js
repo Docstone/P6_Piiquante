@@ -70,7 +70,4 @@ app.use(nocache());
 app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
 
-
-
-
 module.exports = app;

@@ -38,10 +38,7 @@ const errorHandler = error => {
   }
 };
 
-const server = http.createServer({
-  key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem'))
-},app);
+const server = http.createServer(app);
 
 server.on('error', errorHandler);
 server.on('listening', () => {
