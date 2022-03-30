@@ -9,3 +9,4 @@ router.post('/signup', valPassword, userCtrl.signup);
 router.post('/login', userCtrl.login);
 
 module.exports = router;
+

@@ -28,7 +28,6 @@ const userRoutes = require('./routes/user');
 const app = express();
 app.use(xss());
 
-
 // Création d'un limiteur avec la fonction rateLimit
 // max contient le nombre maximum de requêtes et windows
 // le temp en millisecond pour le nombre de requêtes possible 
@@ -42,7 +41,6 @@ const limiter = rateLimit({
 // afin que toutes les requêtes venant de l'utilisateur
 // passent par le middleware
 app.use(limiter);
-
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -71,3 +69,4 @@ app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
 
 module.exports = app;
+

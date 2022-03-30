@@ -4,7 +4,7 @@ const passwordSchema = new passwordValidator();
 
 passwordSchema
   .is().min(8)
-  .is().max(20)
+  .is().max(100)
   .has().uppercase()
   .has().lowercase()
   .has().digits(2)
@@ -15,8 +15,13 @@ console.log(passwordSchema)
 
 module.exports = (req, res, next) => {
     if ( !passwordSchema.validate(req.body.password) ) {
-        return res.status(400).json({ message : `Mot de passe trop faible:   ${passwordSchema.validate(req.body.password, { list: true }) }`})
+        return res.status(400)
+        .json({ 
+            message : `Mot de passe trop faible:   
+            ${passwordSchema.validate(req.body.password, { list: true }) }`})
     } else {
         next();
     }
 };
+
+
